@@ -13,21 +13,17 @@ include $(CLEAR_VARS)
 LOCAL_SRC_FILES += $(call all-java-files-under, src)
 
 LOCAL_MODULE_TAGS := optional
-LOCAL_SDK_VERSION := current
+LOCAL_USE_AAPT2 := true
+LOCAL_PRIVATE_PLATFORM_APIS := true
 
-LOCAL_STATIC_JAVA_LIBRARIES := \
-    android-support-v4 \
-    android-support-v7-appcompat \
-    android-support-design
+LOCAL_STATIC_ANDROID_LIBRARIES += androidx.legacy_legacy-support-v4
+LOCAL_STATIC_ANDROID_LIBRARIES += androidx.appcompat_appcompat
+LOCAL_STATIC_ANDROID_LIBRARIES += com.google.android.material_material
 
-LOCAL_RESOURCE_DIR := $(LOCAL_PATH)/res \
-    frameworks/support/v7/appcompat/res \
+LOCAL_STATIC_JAVA_LIBRARIES += guava
 
-LOCAL_AAPT_FLAGS := --auto-add-overlay \
-    --extra-packages android.support.v4 \
-    --extra-packages android.support.v7.appcompat \
-    --extra-packages android.support.design
+LOCAL_RESOURCE_DIR := $(LOCAL_PATH)/res
 
-LOCAL_PACKAGE_NAME := ParanoidPapers
+LOCAL_PACKAGE_NAME := SyberiaPapers
 
 include $(BUILD_PACKAGE)

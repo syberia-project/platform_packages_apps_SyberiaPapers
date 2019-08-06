@@ -7,18 +7,18 @@
      or at https://www.gnu.org/licenses/gpl-2.0.txt
 -->
  
-<android.support.v4.view.ViewPager
+<androidx.viewpager.widget.ViewPager
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/pager"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <android.support.design.widget.TabLayout
+    <com.google.android.material.tabs.TabLayout
         android:id="@+id/page_indicator"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         app:tabBackground="@drawable/page_indicator_selector"
         app:tabGravity="center" />
 
-</android.support.v4.view.ViewPager>
+</androidx.viewpager.widget.ViewPager>
